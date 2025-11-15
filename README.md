@@ -1,4 +1,4 @@
-# event-management-api# Event Management API
+# Event Management API
 
 This is a clean, compile-ready NestJS project using Express (v4), Mongoose v7 and Multer.
 
