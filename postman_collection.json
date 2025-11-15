@@ -1,0 +1,127 @@
+{
+  "info": {
+    "name": "Event Management API - Fixed",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Admin\", \"email\": \"admin@example.com\", \"password\": \"password123\", \"role\": \"admin\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/users/register",
+          "host": [
+            "http://localhost:3000"
+          ],
+          "path": [
+            "users",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"admin@example.com\", \"password\": \"password123\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/login",
+          "host": [
+            "http://localhost:3000"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Event (admin form-data)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "New Event",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": "Event description long enough",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "2030-12-01T10:00:00.000Z",
+              "type": "text"
+            },
+            {
+              "key": "banner",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/events",
+          "host": [
+            "http://localhost:3000"
+          ],
+          "path": [
+            "events"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Events",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/events?page=1&limit=10&search=Event",
+          "host": [
+            "http://localhost:3000"
+          ],
+          "path": [
+            "events"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
