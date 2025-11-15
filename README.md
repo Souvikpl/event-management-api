@@ -60,26 +60,8 @@ npm run start:dev
 ## 🧪 Postman
 Import:
 ```
-event-management-full-postman.json
+postman_collection.json
 ```
-
-## 📚 API Endpoints
-### Auth
-POST /users/register  
-POST /auth/login  
-GET /users/me  
-
-### Events (Public)
-GET /events  
-GET /events/:id  
-
-### Events (Admin)
-POST /events  
-PUT /events/:id  
-DELETE /events/:id  
-
-### Attendees
-POST /events/:id/register
 
 ## 🛠 Scripts
 npm run start  
