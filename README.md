@@ -1,24 +1,90 @@
-# Event Management API
+# 🚀 Event Management API
+A complete Event Management REST API built using **NestJS + MongoDB**, featuring authentication, role-based access, event CRUD with file upload, attendee registration, and powerful event listing filters.
 
-This is a clean, compile-ready NestJS project using Express (v4), Mongoose v7 and Multer.
+## 📌 Features
+- **JWT Authentication**
+- **Role-Based Access Control** (`admin`, `user`)
+- **Users**: Register, Login, Get Profile
+- **Events (Admin)**: Create, Update, Delete
+- **File Upload** (Multer)
+- **Event Listing**: Pagination, Search, Date Filter
+- **Attendee Registration**
 
-## Quick start
+## 🏗 Tech Stack
+- NestJS (v10)
+- Express
+- MongoDB + Mongoose
+- JWT Authentication
+- Multer
+- Class Validator
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+## 📁 Project Structure
+```
+src/
+ ├── auth/
+ ├── users/
+ ├── events/
+ ├── common/
+ ├── app.module.ts
+ └── main.ts
+uploads/
+.env
+```
 
-2. env file:
-   ```bash
-   .env
-   ```
+## ⚙️ Installation
+### Clone
+```
+git clone https://github.com/souvikpl/event-management-api.git
+cd event-management-api
+```
 
-3. Ensure MongoDB is running (localhost or update MONGO_URI).
+### Install
+```
+npm install
+```
 
-4. Start the dev server:
-   ```bash
-   npm run start:dev
-   ```
+### .env Setup
+```
+PORT=4000
+MONGO_URI=mongodb://localhost:27017/eventdb
+JWT_SECRET=souvikevent
+JWT_EXPIRES_IN=1h
+UPLOAD_DIR=./uploads
+```
 
-The app serves uploads from `/uploads` (public) and runs on `http://localhost:4000` by default.
+### Run
+```
+npm run start:dev
+```
+
+## 🧪 Postman
+Import:
+```
+event-management-full-postman.json
+```
+
+## 📚 API Endpoints
+### Auth
+POST /users/register  
+POST /auth/login  
+GET /users/me  
+
+### Events (Public)
+GET /events  
+GET /events/:id  
+
+### Events (Admin)
+POST /events  
+PUT /events/:id  
+DELETE /events/:id  
+
+### Attendees
+POST /events/:id/register
+
+## 🛠 Scripts
+npm run start  
+npm run start:dev  
+npm run build  
+
+## 📄 License
+MIT
